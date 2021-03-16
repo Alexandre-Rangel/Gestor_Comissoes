@@ -1,15 +1,14 @@
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
 @yield('header')
-
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Avaliação - Alexandre Costa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Gestão</title>
+
+  
 
 
   <!-- Bootstrap -->
@@ -29,29 +28,77 @@
 
 
 
-  <nav class="navbar navbar-expand navbar-dark bg-dark">
-
-    <div class="collapse navbar-collapse" id="navbarsExample02">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Contratos <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Equipamentos <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Regras <span class="sr-only">(current)</span></a>
-        </li>
-
-      </ul>
-      <form class="form-inline my-2 my-md-0">
-        <input class="form-control" type="text" placeholder="Search">
-      </form>
-    </div>
-  </nav>
-
 
 
 
 </head>
 
+<body>
+
+
+
+<nav class="navbar navbar-light " style="background-color: #79b9e8;">
+<div class="container-fluid">
+<div class="col-11">
+
+
+  <nav class="navbar navbar-light navbar-expand-md " >
+    <a href="#" class="navbar-brand"> Software </a>
+    <div class="collapse navbar-collapse" >
+      <div class="navbar-nav">
+        <a class="nav-link" href="{{route('home')}}">Principal</a>
+        <a class="nav-link" href="{{route('vendedores')}}">Vendedores</a>
+ 
+        <a class="nav-link" href="{{route('mercadorias')}}">Mercadorias</a>
+        <a class="nav-link" href="{{route('comissao')}}">Comissão</a>
+        <a class="nav-link" href="{{route('vendas')}}">Vendas</a>
+        <a class="nav-link" href="{{route('adm')}}">Administração</a>
+        <a class="nav-link" href="#">Logout</a>
+ 
+      </div>
+
+
+    </div>
+
+  </nav>
+
+
+
+  
+
+
+  </div>
+
+
+
+
+  <div class="col-1">
+
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+  </a>
+  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+    <p>Administração </p>
+    <a href="#" class="btn ">
+      <div id="tot_carrinho"></div> <i class="fa fa-shopping-cart btn-lg"></i>
+    </a>
+
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Sair</a>
+  </div>
+</li>
+</div>
+  </div>
+  
+  </nav>
+
+
+
+
+@yield('content')
+
+
+</body>
+
+</html>

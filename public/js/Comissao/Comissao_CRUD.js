@@ -64,7 +64,7 @@ function Alterar(value) {
       $.ajax({
   
         type: 'POST',
-        url: '/ajax',
+        url: '/Comissao_insere',
         headers: {
           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
       },
@@ -86,7 +86,7 @@ function Alterar(value) {
   
       $.ajax({
         type: 'PUT',
-        url: '/edit',
+        url: '/Comissao_altera',
         headers: {
           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
       },
@@ -109,7 +109,7 @@ function Alterar(value) {
   
   $.ajax({
   type: 'GET',
-  url: '/delete',
+  url: '/Comissao_delete',
   data: str,
   
   success: function(data) {
