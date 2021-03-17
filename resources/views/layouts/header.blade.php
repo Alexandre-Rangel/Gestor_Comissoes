@@ -2,13 +2,13 @@
 <html lang="pt-br">
 
 <head>
-@yield('header')
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sistema de Gestão</title>
-
   
+
+  <title>Sistema de Gestão - @yield('title')</title>
 
 
   <!-- Bootstrap -->
@@ -25,10 +25,6 @@
   <script src="https://kendo.cdn.telerik.com/2021.1.224/js/angular.min.js"></script>
   <script src="https://kendo.cdn.telerik.com/2021.1.224/js/jszip.min.js"></script>
   <script src="https://kendo.cdn.telerik.com/2021.1.224/js/kendo.all.min.js"></script>
-
-
-
-
 
 
 </head>
@@ -53,6 +49,7 @@
         <a class="nav-link" href="{{route('comissao')}}">Comissão</a>
         <a class="nav-link" href="{{route('vendas')}}">Vendas</a>
         <a class="nav-link" href="{{route('adm')}}">Administração</a>
+        <a class="nav-link" href="{{route('relatorio')}}">Relatorio</a>
         <a class="nav-link" href="#">Logout</a>
  
       </div>
@@ -93,10 +90,10 @@
   
   </nav>
 
+  @yield('header')
 
 
 
-@yield('content')
 
 
 </body>

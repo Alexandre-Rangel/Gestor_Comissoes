@@ -18,7 +18,65 @@ class BuscaController extends Controller
      
 
 
+     public function Home_Chart()
+     {
+          $data = [];
+        $nome2 = '';
+        $i = 0;
+        $valor_total = 0;
+          $results = DB::select('
+        
+          Select v.dt_venda as Data_Venda, vd.nome as Nome_Funcionario, m.descricao as Descricao_Produto, m.valor as Valor, c.descricao as Descricao_Mercadoria
+          from 
+          vendas v
+           join vendedores vd
+            on v.id_vendedor = vd.id
+           join mercadorias m
+            on m.id = v.id_mercadoria
+            join comissoes c 
+            on m.id_categoria = c.id 
+            order by Nome_Funcionario
+             ');
+            
+             foreach ($results as $row) {
+               $dt_venda = $row->Data_Venda;
+               $nome = $row->Nome_Funcionario;
+               $descricao = $row->Descricao_Produto;
+               $valor = $row->Valor;
+               $Descricao_Mercadoria = $row->Descricao_Mercadoria;
 
+
+               
+               $valor_total += $valor;
+
+               if ($nome != $nome2)
+               {
+                   
+                    $key = array_search($nome , $data); 
+                              if ($key === false){
+
+                    $i++;
+                   $valor_total = 0;
+                   $valor_total = $valor;
+                              }else
+                              {
+                                //$i = $key;
+                                   $data[$key]  = ['category' => $nome,
+                                   'value' => $valor_total];   
+                              }
+               }
+
+                      $data[$i]  = ['category' => $nome,
+                    'value' => $valor_total];
+                    $nome2 = $nome;
+
+
+
+             }
+
+          echo json_encode($data);  
+     }
+     
 
 
 //***************Comissao********************** */
@@ -132,8 +190,8 @@ public function Vendas_delete (Request $request){
 
   public function Vendas_altera (Request $request){
        $dt_venda = $request->input('dt_venda');
-       $id_vendedor = $request->input('id_vendedor');
-       $id_mercadoria = $request->input('id_mercadoria');   
+       $id_vendedor = $request->input('T_Vendedor');
+       $id_mercadoria = $request->input('T_Mercadoria');   
        $id = $request->input('id');
 
        $orderdate = explode('/', $dt_venda);

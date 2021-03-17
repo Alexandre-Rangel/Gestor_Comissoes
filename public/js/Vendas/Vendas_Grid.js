@@ -139,6 +139,13 @@ function recarrega_tabela() {
 }; //recarrega_tabela
 
 
+
+
+
+
+
+
+
 var reg;
 $.ajax({
   url: '/Vendas_Select_Vendedor',
@@ -168,11 +175,16 @@ $("#T_Vendedor").kendoDropDownList({
 
 var dropdownlist = $("#T_Vendedor").data("kendoDropDownList");
 
-dropdownlist.select(1);
+dropdownlist.select(0);
 
   }
 
 });
+
+
+
+
+
 
 var reg;
 $.ajax({
@@ -194,23 +206,30 @@ $.ajax({
         read: function(e) {
           e.success(sampleData);
         }
-      }});
+        
+      }}
+      
+      );
 
-$("#T_Mercadoria").kendoDropDownList({
+
+$('#T_Mercadoria').kendoDropDownList({
   dataSource: dataSource,
   dataTextField: "descricao",
   dataValueField: "id"
 });
 
-var dropdownlist = $("#T_Mercadoria").data("kendoDropDownList");
+var dropdownlist = $('#T_Mercadoria').data("kendoDropDownList");
 
-dropdownlist.select(1);
+dropdownlist.select(0);
 
   }
 
 });
 
 
-$("#dt_venda").kendoDatePicker();
+
+$("#dt_venda").kendoDatePicker({
+  format: "dd/MM/yyyy"
+});
 //********************************fim do carregamento do Grid******************* *
 

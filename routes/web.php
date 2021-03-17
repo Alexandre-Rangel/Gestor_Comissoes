@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdmController;
 use App\Http\Controllers\BuscaController;
+use App\Http\Controllers\RelatorioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -91,3 +92,9 @@ Route::get('/Vendas_Select_Vendedor', [BuscaController::class, 'Vendas_Select_Ve
 Route::get('/Vendas_Select_Mercadoria', [BuscaController::class, 'Vendas_Select_Mercadoria']);
 
 Route::get('/Mercadoria_Select_Comissao', [BuscaController::class, 'Mercadoria_Select_Comissao']);
+
+
+Route::get('/relatorio', [RelatorioController::class, 'relatorio'])->name('relatorio');
+
+Route::get('/Home_Chart', [BuscaController::class, 'Home_Chart'])->name('Home_Chart');
+

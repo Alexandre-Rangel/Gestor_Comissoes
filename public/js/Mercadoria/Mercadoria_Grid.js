@@ -170,10 +170,9 @@ $("#id_categoria").kendoDropDownList({
   dataValueField: "id_categoria"
 });
 
-var dropdownlist = $("#id_categoria").data("kendoDropDownList");
-
-dropdownlist.select(1);
 
   }
 
 });
+
+

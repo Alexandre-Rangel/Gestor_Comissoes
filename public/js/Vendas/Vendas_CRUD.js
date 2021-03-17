@@ -15,26 +15,28 @@ function Alterar(value) {
 
     console.log(value);
     document.getElementById('dt_venda').value = dataFormatada;
-    document.getElementById('id_vendedor').value = value.ID_Vendedor;
-    document.getElementById('id_mercadoria').value = value.ID_Mercadoria;
+    document.getElementById('T_Vendedor').value = value.ID_Vendedor;
+    document.getElementById('T_Mercadoria').value = value.ID_Mercadoria;
     document.getElementById('id').value = value.ID;
   }
   
   function Inserir() {
   
     document.getElementById('titulo_tela01').innerHTML = 'Incluir';
-    var form_data = $("input").serializeArray(); 
-    var i;
-    for (i = 2; i < form_data.length; i++) {
-  
-      document.getElementById(form_data[i].name).value = '';
-    } 
-    
+
+    //document.getElementById('T_Vendedor').value = '01';
+    //document.getElementById('T_Mercadoria').value = '01';
+
+    document.getElementById('dt_venda').value = '';
+
+
+
+   
   }
   
   function deletar(value) {
   
-  
+    
     var data_recebida = value.Data;
     
     let dataFormatada = ((data_recebida.getDate())) + "/" + ((data_recebida.getMonth() + 1)) + "/" + data_recebida.getFullYear();
@@ -42,8 +44,8 @@ function Alterar(value) {
     document.getElementById('titulo_tela01').innerHTML = 'Deseja Deletar esse registro?';
 
     document.getElementById('dt_venda').value = dataFormatada;
-    document.getElementById('id_vendedor').value = value.ID_Vendedor;
-    document.getElementById('id_mercadoria').value = value.ID_Mercadoria;
+    document.getElementById('T_Vendedor').value = value.ID_Vendedor;
+    document.getElementById('T_Mercadoria').value = value.ID_Mercadoria;
     document.getElementById('id').value = value.ID;
     
     }

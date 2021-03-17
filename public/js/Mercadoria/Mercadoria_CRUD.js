@@ -20,16 +20,20 @@ function Alterar(value) {
     document.getElementById('id').value = value.ID;
   
   }
-  
+
+
   function Inserir() {
-  
+
+ 
+
     document.getElementById('titulo_tela01').innerHTML = 'Incluir';
-    var form_data = $("input").serializeArray(); 
-    var i;
-    for (i = 2; i < form_data.length; i++) {
-  
-      document.getElementById(form_data[i].name).value = '';
-    } 
+
+
+    document.getElementById('descricao').value = '';
+    document.getElementById('valor').value =  '';
+
+
+
     
   }
   

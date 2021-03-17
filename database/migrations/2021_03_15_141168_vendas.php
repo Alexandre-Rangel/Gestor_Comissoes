@@ -23,12 +23,12 @@ class Vendas extends Migration
 
         $table->foreign("id_vendedor")
                ->references("id")
-               ->on("mercadorias")
+               ->on("vendedores")
                ->onDelete("cascade");
 
                $table->foreign("id_mercadoria")
                ->references("id")
-               ->on("vendedores")
+               ->on("mercadorias")
                ->onDelete("cascade");
             });
         }

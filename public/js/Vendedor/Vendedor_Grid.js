@@ -138,4 +138,12 @@ function recarrega_tabela() {
 
 }; //recarrega_tabela
 
+
+$("#data").kendoDatePicker({
+  format: "dd/MM/yyyy"
+});
 //********************************fim do carregamento do Grid******************* */
+
+
+
+
