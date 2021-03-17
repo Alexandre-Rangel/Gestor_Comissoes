@@ -5,7 +5,7 @@ Nessa aplicação decidi mudar um pouco, diferente da forma tradicional de reali
 
 A aplicação já vem com um login e senha pre-cadastrados que estao no banco de dados:
 
-Login: Alexandre
+Login: Usuario
 Senha: 123
 
 O banco de Dados se encontra junto com os arquivos com o nome Gestor.sql
