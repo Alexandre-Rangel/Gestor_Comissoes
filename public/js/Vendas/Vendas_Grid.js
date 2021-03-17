@@ -7,14 +7,14 @@ function recarrega_tabela() {
 
 
 
-    //*********************************  inicia GRIG  com Framework Kendo JQuery */
+  //*********************************  inicia GRIG  com Framework Kendo JQuery */
   var reg;
 
   $.ajax({
     url: '/Vendas_Grid',
     type: 'GET',
     dataType: 'json',
-    success: function(data) {
+    success: function (data) {
 
       var sampleData = [];
       for (reg = 0; reg < data.length; reg++) {
@@ -23,20 +23,20 @@ function recarrega_tabela() {
           ID_Vendedor: data[reg].id_vendedor,
           Data: data[reg].dt_venda,
           ID_Mercadoria: data[reg].id_mercadoria
-          
+
         });
       }
-   
+
 
       // $(document).ready(function () {
 
       var dataSource = new kendo.data.DataSource({
         transport: {
-          read: function(e) {
+          read: function (e) {
             e.success(sampleData);
           }
         },
-        error: function(e) {
+        error: function (e) {
           alert("Status: " + e.status + "; Error message: " + e.errorThrown);
         },
         pageSize: 10,
@@ -71,58 +71,58 @@ function recarrega_tabela() {
         dataSource: dataSource,
         pageable: true,
         columns: [{
-            field: "ID",
-            title: "ID",
-            width: "20px"
-          },
-          {
-            field: "ID_Vendedor",
-            title: "ID_Vendedor",
-            width: "200px"
-          },
-          {
-            field: "Data",
-            title: "Data",
-            format: "{0:dd/MM/yyyy}",
-            width: "120px"
-          },
-          {
-            field: "ID_Mercadoria",
-            title: "ID_Mercadoria",
-            format:  "{0:0}",
-            width: "120px"
-          },         
-          {
-            command: [
+          field: "ID",
+          title: "ID",
+          width: "20px"
+        },
+        {
+          field: "ID_Vendedor",
+          title: "ID_Vendedor",
+          width: "200px"
+        },
+        {
+          field: "Data",
+          title: "Data",
+          format: "{0:dd/MM/yyyy}",
+          width: "120px"
+        },
+        {
+          field: "ID_Mercadoria",
+          title: "ID_Mercadoria",
+          format: "{0:0}",
+          width: "120px"
+        },
+        {
+          command: [
 
-              {
-                text: "Alterar",
-                name: "Alterar",
-                click: function(e) {
-                  var tr = $(e.target).closest("tr");
-                  var data = this.dataItem(tr);
+            {
+              text: "Alterar",
+              name: "Alterar",
+              click: function (e) {
+                var tr = $(e.target).closest("tr");
+                var data = this.dataItem(tr);
 
-                  document.getElementById('inserir_alterar').click();
-                  Alterar(data);
-                }
-              },
-              {
-                text: "Deletar",
-                name: "Deletar",
-                click: function(e) {
-                  var tr = $(e.target).closest("tr");
-                  var data = this.dataItem(tr);
-
-                  document.getElementById('inserir_alterar').click();
-
-                  
-                  deletar(data);
-                }
+                document.getElementById('inserir_alterar').click();
+                Alterar(data);
               }
-            ],
-            title: " ",
-            width: "140px"
-          }
+            },
+            {
+              text: "Deletar",
+              name: "Deletar",
+              click: function (e) {
+                var tr = $(e.target).closest("tr");
+                var data = this.dataItem(tr);
+
+                document.getElementById('inserir_alterar').click();
+
+
+                deletar(data);
+              }
+            }
+          ],
+          title: " ",
+          width: "140px"
+        }
         ]
       })
 
@@ -151,31 +151,32 @@ $.ajax({
   url: '/Vendas_Select_Vendedor',
   type: 'GET',
   dataType: 'json',
-  success: function(data) {
+  success: function (data) {
     var sampleData = [];
     for (reg = 0; reg < data.length; reg++) {
       sampleData.push({
         id: data[reg].id,
         nome: data[reg].nome
-        
+
       });
     }
     var dataSource = new kendo.data.DataSource({
       transport: {
-        read: function(e) {
+        read: function (e) {
           e.success(sampleData);
         }
-      }});
+      }
+    });
 
-$("#T_Vendedor").kendoDropDownList({
-  dataSource: dataSource,
-  dataTextField: "nome",
-  dataValueField: "id"
-});
+    $("#T_Vendedor").kendoDropDownList({
+      dataSource: dataSource,
+      dataTextField: "nome",
+      dataValueField: "id"
+    });
 
-var dropdownlist = $("#T_Vendedor").data("kendoDropDownList");
+    var dropdownlist = $("#T_Vendedor").data("kendoDropDownList");
 
-dropdownlist.select(0);
+    dropdownlist.select(0);
 
   }
 
@@ -191,36 +192,37 @@ $.ajax({
   url: '/Vendas_Select_Mercadoria',
   type: 'GET',
   dataType: 'json',
-  success: function(data) {
+  success: function (data) {
     var sampleData = [];
     for (reg = 0; reg < data.length; reg++) {
       sampleData.push({
         id: data[reg].id,
-        descricao: data[reg].descricao+' R$ '+data[reg].valor,
+        descricao: data[reg].descricao + ' R$ ' + data[reg].valor,
         valor: data[reg].valor,
-        
+
       });
     }
     var dataSource = new kendo.data.DataSource({
       transport: {
-        read: function(e) {
+        read: function (e) {
           e.success(sampleData);
         }
-        
-      }}
-      
-      );
+
+      }
+    }
+
+    );
 
 
-$('#T_Mercadoria').kendoDropDownList({
-  dataSource: dataSource,
-  dataTextField: "descricao",
-  dataValueField: "id"
-});
+    $('#T_Mercadoria').kendoDropDownList({
+      dataSource: dataSource,
+      dataTextField: "descricao",
+      dataValueField: "id"
+    });
 
-var dropdownlist = $('#T_Mercadoria').data("kendoDropDownList");
+    var dropdownlist = $('#T_Mercadoria').data("kendoDropDownList");
 
-dropdownlist.select(0);
+    dropdownlist.select(0);
 
   }
 

@@ -7,14 +7,14 @@ function recarrega_tabela() {
 
 
 
-    //*********************************  inicia GRIG  com Framework Kendo JQuery */
+  //*********************************  inicia GRIG  com Framework Kendo JQuery */
   var reg;
 
   $.ajax({
     url: '/Comissao_Grid',
     type: 'GET',
     dataType: 'json',
-    success: function(data) {
+    success: function (data) {
 
       var sampleData = [];
       for (reg = 0; reg < data.length; reg++) {
@@ -24,17 +24,17 @@ function recarrega_tabela() {
           Valor: data[reg].valor
         });
       }
-   
+
 
       // $(document).ready(function () {
 
       var dataSource = new kendo.data.DataSource({
         transport: {
-          read: function(e) {
+          read: function (e) {
             e.success(sampleData);
           }
         },
-        error: function(e) {
+        error: function (e) {
           alert("Status: " + e.status + "; Error message: " + e.errorThrown);
         },
         pageSize: 10,
@@ -66,52 +66,52 @@ function recarrega_tabela() {
         dataSource: dataSource,
         pageable: true,
         columns: [{
-            field: "ID",
-            title: "ID",
-            width: "20px"
-          },
-          {
-            field: "Descricao",
-            title: "Descricao",
-            width: "200px"
-          },
-          {
-            field: "Valor",
-            title: "Valor",
-            format: "{0:00.00}",
-            width: "120px"
-          },
-          {
-            command: [
+          field: "ID",
+          title: "ID",
+          width: "20px"
+        },
+        {
+          field: "Descricao",
+          title: "Descricao",
+          width: "200px"
+        },
+        {
+          field: "Valor",
+          title: "Valor",
+          format: "{0:00.00}",
+          width: "120px"
+        },
+        {
+          command: [
 
-              {
-                text: "Alterar",
-                name: "Alterar",
-                click: function(e) {
-                  var tr = $(e.target).closest("tr");
-                  var data = this.dataItem(tr);
+            {
+              text: "Alterar",
+              name: "Alterar",
+              click: function (e) {
+                var tr = $(e.target).closest("tr");
+                var data = this.dataItem(tr);
 
-                  document.getElementById('inserir_alterar').click();
-                  Alterar(data);
-                }
-              },
-              {
-                text: "Deletar",
-                name: "Deletar",
-                click: function(e) {
-                  var tr = $(e.target).closest("tr");
-                  var data = this.dataItem(tr);
-
-                  document.getElementById('inserir_alterar').click();
-
-                  
-                  deletar(data);
-                }
+                document.getElementById('inserir_alterar').click();
+                Alterar(data);
               }
-            ],
-            title: " ",
-            width: "140px"
-          }
+            },
+            {
+              text: "Deletar",
+              name: "Deletar",
+              click: function (e) {
+                var tr = $(e.target).closest("tr");
+                var data = this.dataItem(tr);
+
+                document.getElementById('inserir_alterar').click();
+
+
+                deletar(data);
+              }
+            }
+          ],
+          title: " ",
+          width: "140px"
+        }
         ]
       })
 

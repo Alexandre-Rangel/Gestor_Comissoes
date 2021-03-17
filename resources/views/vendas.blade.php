@@ -24,17 +24,17 @@
             <label for="usuario">Data da Venda</label>
             <input class="form-control" required name="dt_venda" id="dt_venda" type="text">
           </div>
-  
+
 
           <div class="form-group col-lg-15">
             <label for="usuario">Vendedor</label>
-           
-            <input class="form-control"  name="T_Vendedor" id="T_Vendedor" type="text">
+
+            <input class="form-control" name="T_Vendedor" id="T_Vendedor" type="text">
           </div>
           <div class="form-group col-lg-15">
             <label for="usuario">Mercadoria</label>
-            
-            <input class="form-control"  name="T_Mercadoria" id="T_Mercadoria" type="text">
+
+            <input class="form-control" name="T_Mercadoria" id="T_Mercadoria" type="text">
           </div>
 
 

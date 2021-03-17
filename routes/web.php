@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdmController;
 use App\Http\Controllers\BuscaController;
 use App\Http\Controllers\RelatorioController;
+use App\Http\Controllers\RelControllerFunc;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,14 +19,19 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::match(['get', 'post'], '/', [AdmController::class, 'login'])
-->name('login');
+Route::match(['get', 'post'], '/logar', [AdmController::class, 'logar'])
+    ->name('logar');
+
+Route::match(['get', 'post'], '/', [AdmController::class, 'sair'])
+    ->name('sair');
 
 Route::match(['get', 'post'], '/home', function () {
     return view('/home');
 })->name('home');
 
-
+Route::match(['get', 'post'], '/login', function () {
+    return view('/login');
+})->name('login');
 
 
 
@@ -96,5 +102,5 @@ Route::get('/Mercadoria_Select_Comissao', [BuscaController::class, 'Mercadoria_S
 
 Route::get('/relatorio', [RelatorioController::class, 'relatorio'])->name('relatorio');
 
-Route::get('/Home_Chart', [BuscaController::class, 'Home_Chart'])->name('Home_Chart');
 
+Route::get('/Home_Chart', [BuscaController::class, 'Home_Chart'])->name('Home_Chart');

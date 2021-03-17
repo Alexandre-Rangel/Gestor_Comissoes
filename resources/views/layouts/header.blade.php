@@ -48,9 +48,8 @@
         <a class="nav-link" href="{{route('mercadorias')}}">Mercadorias</a>
         <a class="nav-link" href="{{route('comissao')}}">Comissão</a>
         <a class="nav-link" href="{{route('vendas')}}">Vendas</a>
-        <a class="nav-link" href="{{route('adm')}}">Administração</a>
         <a class="nav-link" href="{{route('relatorio')}}">Relatorio</a>
-        <a class="nav-link" href="#">Logout</a>
+        <a class="nav-link" href="{{route('sair')}}">Logout</a>
  
       </div>
 
@@ -92,7 +91,12 @@
 
   @yield('header')
 
-
+  <?php 
+@session_start();
+if(@$_SESSION['adm'] != 'ok'){ 
+  echo "<script language='javascript'> window.location='./login' </script>";
+}
+?>
 
 
 

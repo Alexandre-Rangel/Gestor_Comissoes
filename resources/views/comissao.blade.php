@@ -51,15 +51,8 @@
 <div id="details"></div>
 
 
-
-
-
-
-
 <script src="js/Comissao/Comissao_Grid.js"></script>
 <script src="js/Comissao/Comissao_CRUD.js"></script>
 
 
 @endsection
-
-

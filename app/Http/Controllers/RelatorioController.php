@@ -39,13 +39,7 @@ vendas v
         ');
 
 
-     
-
-            $b = "img/indice.jpeg";
-
-            // set default header data
-            PDF::SetHeaderData($b, '20', 'Relatorio Gerencial de Vendas', 'Empresa Nome', array(0, 0, 0), array(255, 255, 255));
-            PDF::setFooterData(array(0, 64, 0), array(0, 64, 128));
+   PDF::setFooterData(array(0, 64, 0), array(0, 64, 128));
 
             // set header and footer fonts
             PDF::setHeaderFont(array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
@@ -80,9 +74,9 @@ vendas v
 
 
             PDF::SetFont('helvetica', 'B', 13);
-            PDF::Text(40, 8, 'teste');
+            PDF::Text(40, 8, 'Empresa nome tal');
             PDF::SetFont('helvetica', 'B', 10);
-            PDF::Text(40, 16, 'teste');
+            PDF::Text(40, 16, 'Endereco rua 10 quadra 1');
             PDF::SetFont('dejavusans', '', 16, '', true);
             PDF::Text(70, 30, 'Listagem das Vendas');
             $t = "<br /><br />";
@@ -155,14 +149,14 @@ vendas v
             $tbl .= '<tr>
         <td style="text-align:center;margin-bottom:12px;font-weight:bold;width:120px;">' . $dataParaExibir  . '</td>
         <td style="text-align:center;padding-left:12px;width:90px;">' . $nome  . '</td>
-        <td style="text-align:centermargin-bottom:12px;width:150px;">' . $descricao . '</td>
-        <td style="text-align:left;margin-bottom:12px;width:70px;">' . $valor . '</td>
+        <td style="text-align:center;margin-bottom:12px;width:150px;">' . $descricao . '</td>
+        <td style="text-align:center;margin-bottom:12px;width:70px;">' . $valor . '</td>
         <td style="text-align:left;margin-bottom:12px;width:130px;">' . $Descricao_Mercadoria . '</td>
-        <td style="text-align:left;margin-bottom:12px;width:70px;">' . 'R$' .$Percentual. '</td>
+        <td style="text-align:center;margin-bottom:12px;width:70px;">' . 'R$' .$Percentual. '</td>
 
         </tr>';
 
-            $ok = '<h4 style="text-align:right;font-weight:bold;">Total: ' . $Tot_Percentual . '</h4>';
+            $ok = '<h4 style="text-align:right;font-weight:bold;">Total R$: ' . $Tot_Percentual . '</h4>';
 
         }
 

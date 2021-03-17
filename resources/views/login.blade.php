@@ -1,205 +1,222 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!------ Include the above in your HEAD tag ---------->
 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!-- Include the above in your HEAD tag -->
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <!-- Include the above in your HEAD tag -->
 
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<style > 
-@charset "utf-8";
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <style>
+    @charset "utf-8";
 
-@import url('maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
-
-
-
-div.main{
-    background: #6bafff; /* Old browsers */
-background: -moz-radial-gradient(center, ellipse cover,  #6bafff 1%, #1c2b5a 100%); /* FF3.6+ */
-background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%,#6bafff), color-stop(100%,#1c2b5a)); /* Chrome,Safari4+ */
-background: -webkit-radial-gradient(center, ellipse cover,  #6bafff 1%,#1c2b5a 100%); /* Chrome10+,Safari5.1+ */
-background: -o-radial-gradient(center, ellipse cover,  #6bafff 1%,#1c2b5a 100%); /* Opera 12+ */
-background: -ms-radial-gradient(center, ellipse cover,  #6bafff 1%,#1c2b5a 100%); /* IE10+ */
-background: radial-gradient(ellipse at center,  #6bafff 1%,#1c2b5a 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6bafff', endColorstr='#1c2b5a',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-height:calc(100vh);
-width:100%;
-}
-
-[class*="fontawesome-"]:before {
-  font-family: 'FontAwesome', sans-serif;
-}
-
-/* ---------- GENERAL ---------- */
+    @import url('maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
 
 
 
-body {
-   
-    color: #606468;
-  font: 87.5%/1.5em 'Open Sans', sans-serif;
-  margin: 0;
-}
+    div.main {
+      background: #6bafff;
+      /* Old browsers */
+      background: -moz-radial-gradient(center, ellipse cover, #6bafff 1%, #1c2b5a 100%);
+      /* FF3.6+ */
+      background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%, #6bafff), color-stop(100%, #1c2b5a));
+      /* Chrome,Safari4+ */
+      background: -webkit-radial-gradient(center, ellipse cover, #6bafff 1%, #1c2b5a 100%);
+      /* Chrome10+,Safari5.1+ */
+      background: -o-radial-gradient(center, ellipse cover, #6bafff 1%, #1c2b5a 100%);
+      /* Opera 12+ */
+      background: -ms-radial-gradient(center, ellipse cover, #6bafff 1%, #1c2b5a 100%);
+      /* IE10+ */
+      background: radial-gradient(ellipse at center, #6bafff 1%, #1c2b5a 100%);
+      /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6bafff', endColorstr='#1c2b5a', GradientType=1);
+      /* IE6-9 fallback on horizontal gradient */
+      height: calc(100vh);
+      width: 100%;
+    }
 
-a {
-	color: #eee;
-	text-decoration: none;
-}
+    [class*="fontawesome-"]:before {
+      font-family: 'FontAwesome', sans-serif;
+    }
 
-a:hover {
-	text-decoration: underline;
-}
+    /* ---------- GENERAL ---------- */
 
-input {
-	border: none;
-	font-family: 'Open Sans', Arial, sans-serif;
-	font-size: 14px;
-	line-height: 1.5em;
-	padding: 0;
-	-webkit-appearance: none;
-}
 
-p {
-	line-height: 1.5em;
-}
- 
 
-.container {
-  left: 50%;
-  position: fixed;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
+    body {
 
-/* ---------- LOGIN ---------- */
+      color: #606468;
+      font: 87.5%/1.5em 'Open Sans', sans-serif;
+      margin: 0;
+    }
 
-#login form{
-	width: 250px;
-}
-#login, .logo{
-    display:inline-block;
-    width:60%;
-}
-#login{
-border-right:1px solid #fff;
-  padding: 0px 22px;
-  width: 59%;
-}
-.logo{
-color:#fff;
-font-size:30px;
-  line-height: 125px;
-}
+    a {
+      color: #eee;
+      text-decoration: none;
+    }
 
-#login form span.fa {
-	background-color: #fff;
-	border-radius: 3px 0px 0px 3px;
-	color: #000;
-	display: block;
-	float: left;
-	height: 50px;
-    font-size:24px;
-	line-height: 50px;
-	text-align: center;
-	width: 50px;
-}
+    a:hover {
+      text-decoration: underline;
+    }
 
-#login form input {
-	height: 50px;
-}
-fieldset{
-    padding:0;
-    border:0;
-    margin: 0;
+    input {
+      border: none;
+      font-family: 'Open Sans', Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.5em;
+      padding: 0;
+      -webkit-appearance: none;
+    }
 
-}
-#login form input[type="text"], input[type="password"] {
-	background-color: #fff;
-	border-radius: 0px 3px 3px 0px;
-	color: #000;
-	margin-bottom: 1em;
-	padding: 0 16px;
-	width: 200px;
-}
+    p {
+      line-height: 1.5em;
+    }
 
-#login form input[type="submit"] {
-  border-radius: 3px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  background-color: #000000;
-  color: #eee;
-  font-weight: bold;
-  /* margin-bottom: 2em; */
-  text-transform: uppercase;
-  padding: 5px 10px;
-  height: 30px;
-}
 
-#login form input[type="submit"]:hover {
-	background-color: #d44179;
-}
+    .container {
+      left: 50%;
+      position: fixed;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
 
-#login > p {
-	text-align: center;
-}
+    /* ---------- LOGIN ---------- */
 
-#login > p span {
-	padding-left: 5px;
-}
-.middle {
-  display: flex;
-  width: 600px;
-}
-</style>
+    #login form {
+      width: 250px;
+    }
+
+    #login,
+    .logo {
+      display: inline-block;
+      width: 60%;
+    }
+
+    #login {
+      border-right: 1px solid #fff;
+      padding: 0px 22px;
+      width: 59%;
+    }
+
+    .logo {
+      color: #fff;
+      font-size: 30px;
+      line-height: 125px;
+    }
+
+    #login form span.fa {
+      background-color: #fff;
+      border-radius: 3px 0px 0px 3px;
+      color: #000;
+      display: block;
+      float: left;
+      height: 50px;
+      font-size: 24px;
+      line-height: 50px;
+      text-align: center;
+      width: 50px;
+    }
+
+    #login form input {
+      height: 50px;
+    }
+
+    fieldset {
+      padding: 0;
+      border: 0;
+      margin: 0;
+
+    }
+
+    #login form input[type="text"],
+    input[type="password"] {
+      background-color: #fff;
+      border-radius: 0px 3px 3px 0px;
+      color: #000;
+      margin-bottom: 1em;
+      padding: 0 16px;
+      width: 200px;
+    }
+
+    #login form input[type="submit"] {
+      border-radius: 3px;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      background-color: #000000;
+      color: #eee;
+      font-weight: bold;
+      /* margin-bottom: 2em; */
+      text-transform: uppercase;
+      padding: 5px 10px;
+      height: 30px;
+    }
+
+    #login form input[type="submit"]:hover {
+      background-color: #d44179;
+    }
+
+    #login>p {
+      text-align: center;
+    }
+
+    #login>p span {
+      padding-left: 5px;
+    }
+
+    .middle {
+      display: flex;
+      width: 600px;
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="main">
-    
-    
+  <div class="main">
+
+
     <div class="container">
-<center>
-<div class="middle">
-      <div id="login">
+      <center>
+        <div class="middle">
+          <div id="login">
 
-        <form action="{{route('login')}}" method="post">
-        @csrf
-          <fieldset class="clearfix">
+            <form action="{{route('logar')}}" method="post">
+              @csrf
+              <fieldset class="clearfix">
 
-            <p ><span class="fa fa-user"></span><input type="text"  Placeholder="Usuário" name = "login" required></p> 
+                <p><span class="fa fa-user"></span><input type="text" Placeholder="Usuário" name="login" required></p>
 
-            <p><span class="fa fa-lock"></span><input type="password"  placeholder="Senha" name = "senha" required></p> 
-            
-             <div>
-                       
-                            </div>
-                            <input type="submit" value="Logar" class="btn btn-lg btn-primary " />
-          </fieldset>
-<div class="clearfix"></div>
-        </form>
+                <p><span class="fa fa-lock"></span><input type="password" placeholder="Senha" name="senha" required></p>
 
-        <div class="clearfix"></div>
+                <div>
 
-      </div> <!-- end login -->
-      <div class="logo">Gestão Comercial
-          
-          <div class="clearfix"></div>
-      </div>
-      
-      </div>
-</center>
+                </div>
+                <input type="submit" value="Logar" class="btn btn-lg btn-primary " />
+              </fieldset>
+              <div class="clearfix"></div>
+            </form>
+
+            <div class="clearfix"></div>
+
+          </div> <!-- end login -->
+          <div class="logo">Gestão Comercial
+
+            <div class="clearfix"></div>
+          </div>
+
+        </div>
+      </center>
     </div>
 
-</div>  
+  </div>
 </body>
